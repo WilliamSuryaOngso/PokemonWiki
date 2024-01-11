@@ -22,6 +22,7 @@ const usePokemon = ({pokedexNumber}:UsePokemonProps) => {
             setIsLoading(true)
             const url = `${POKEMON_API_POKEMON_URL}/${pokedexNumber}`
             const result = await httpClient.get<DetailPokemon>(url)
+            console.log(result)
             if(result?.data){
                 setPokemon(result.data)
             }
